@@ -1,9 +1,11 @@
 <title>Front End Awesome</title>
 
-<link rel=stylesheet type=text/css style=main.css>
+<link rel=stylesheet type=text/css href=main.css>
 
-<div ng-app>
-    {{"hello" + "world"}}
+<div ng-app ng-cloak>
+    <input type=text ng-model=message>
+    <br>
+    {{message}}
 </div>
 
 <script src=//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js></script>
