@@ -1,7 +1,11 @@
-function MainCtrl($scope, $timeout) {
+function MainCtrl($scope) {
     $scope.message = "universe";
+}
 
-    $timeout(function () {
-        alert("hello!");
+function FooterCtrl($scope, $interval) {
+    $scope.time = Date.now();
+
+    $interval(function () {
+        $scope.time = Date.now();
     }, 1000);
 }
