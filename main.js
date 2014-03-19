@@ -1,7 +1,7 @@
 var app = angular.module("frontend-awesome", []);
 
 app.controller("MainCtrl", ["$scope", function ($scope) {
-    $scope.message = "universe";
+
 }]);
 
 app.controller("FooterCtrl", ["$scope", "$interval", function ($scope, $interval) {

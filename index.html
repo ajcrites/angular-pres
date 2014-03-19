@@ -3,15 +3,17 @@
 <link rel=stylesheet type=text/css href=main.css>
 
 <div ng-app="frontend-awesome" ng-cloak>
+    <input type=text ng-model=data.message autofocus>
+    {{data.message}}
     <div ng-controller=MainCtrl>
-        <input type=text ng-model=message autofocus>
+        <input type=text ng-model=data.message autofocus>
         <br>
-        {{message}}
+        {{data.message}}
     </div>
 
     <div ng-controller=FooterCtrl class=footer>
-        <input type=text ng-model=message>
-        {{message}}
+        <input type=text ng-model=data.message>
+        {{data.message}}
         {{time}}
     </div>
 </div>
