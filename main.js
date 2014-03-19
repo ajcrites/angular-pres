@@ -1,11 +1,18 @@
 var app = angular.module("frontend-awesome", []);
 
-app.controller("MainCtrl", ["$scope", function ($scope) {
+app.factory('Messages', function () {
+    return {message: "Service"};
+});
 
+app.controller("MainCtrl", ["$scope", "Messages", function ($scope, Messages) {
+    $scope.data = Messages;
+    // Also update html `data.message` -> `message`
+    // $scope.message = Messages.message;
 }]);
 
-app.controller("FooterCtrl", ["$scope", "$interval", function ($scope, $interval) {
+app.controller("FooterCtrl", ["$scope", "$interval", "Messages", function ($scope, $interval, Messages) {
     $scope.time = Date.now();
+    $scope.data = Messages;
 
     $interval(function () {
         $scope.time = Date.now();
