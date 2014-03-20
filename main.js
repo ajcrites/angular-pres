@@ -17,8 +17,8 @@ app.controller("MainCtrl", ["$scope", "Messages", function ($scope, Messages) {
     // Also update html `data.message` -> `message`
     // $scope.message = Messages.message;
 
-    $scope.changeMessage = function () {
-        $scope.data.message = "clicked";
+    $scope.changeMessage = function (data) {
+        data.message = "clicked";
     };
 }]);
 
