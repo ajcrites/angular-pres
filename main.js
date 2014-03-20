@@ -7,7 +7,9 @@ app.factory('Messages', function () {
 app.directive("counterHandler", function () {
     return function (scope, element, attrs) {
         element.bind("click", function () {
-            element.addClass(attrs.counterHandler);
+            scope.$apply(function () {
+                scope.data.message = "Clicked";
+            });
         });
     };
 });
