@@ -7,9 +7,7 @@ app.factory('Messages', function () {
 app.directive("counterHandler", function () {
     return function (scope, element, attrs) {
         element.bind("click", function () {
-            scope.$apply(function () {
-                scope.data.message = "Clicked";
-            });
+            scope.$apply(attrs.counterHandler);
         });
     };
 });
@@ -18,6 +16,10 @@ app.controller("MainCtrl", ["$scope", "Messages", function ($scope, Messages) {
     $scope.data = Messages;
     // Also update html `data.message` -> `message`
     // $scope.message = Messages.message;
+
+    $scope.changeMessage = function () {
+        $scope.data.message = "clicked";
+    };
 }]);
 
 app.controller("FooterCtrl", ["$scope", "$interval", "Messages", function ($scope, $interval, Messages) {
