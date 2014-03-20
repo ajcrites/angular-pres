@@ -4,10 +4,15 @@ app.factory('Messages', function () {
     return {message: "Service"};
 });
 
-app.directive("datepicker", function () {
+app.directive("counterHandler", function () {
     return {
-        restrict: "E",
-        template: "<select><option>Month</option></select><select><option>Day</option></select>",
+        // Can remove link
+        link: function (scope, element) {
+            console.log("linked up");
+            element.bind("click", function () {
+                console.log("clicked");
+            });
+        },
     };
 });
 
