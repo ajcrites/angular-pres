@@ -5,14 +5,10 @@ app.factory('Messages', function () {
 });
 
 app.directive("counterHandler", function () {
-    return {
-        // Can remove link
-        link: function (scope, element) {
-            console.log("linked up");
-            element.bind("click", function () {
-                console.log("clicked");
-            });
-        },
+    return function (scope, element, attrs) {
+        element.bind("click", function () {
+            element.addClass(attrs.counterHandler);
+        });
     };
 });
 
